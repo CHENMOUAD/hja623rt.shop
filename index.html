@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
 <script>
-
-        function ya2() {
-            window.open('https://wa.me/123123', '_blank');
+  function ya2() {
+            window.open('https://wa.me/', '_blank');
         }
 </script>
     <meta charset="UTF-8">
@@ -65,6 +64,8 @@
             background-size: 200px 100px;
             animation: stellar-drift 20s linear infinite;
         }
+
+
 
         .grid-overlay-system {
             position: fixed;
@@ -342,6 +343,84 @@
             color: var(--accent-gold);
         }
 
+        .stock-chart-animation-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stock-chart-animation-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+            animation: chart-scan 4s ease-in-out infinite;
+        }
+
+        .chart-header-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .stock-symbol {
+            color: var(--text-primary);
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .price-change {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .price-change.positive {
+            color: var(--accent-gold);
+            animation: profit-glow 2s ease-in-out infinite alternate;
+        }
+
+        .candlestick-chart-svg {
+            width: 100%;
+            height: 120px;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.3));
+        }
+
+        .trend-line {
+            stroke-dasharray: 300;
+            stroke-dashoffset: 300;
+            animation: draw-trend-line 3s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        .candle {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: candle-appear 0.6s ease-out forwards;
+        }
+
+        .price-label {
+            opacity: 0;
+            animation: fade-in-up 0.5s ease-out forwards;
+        }
+
+        .profit-indicator {
+            opacity: 0;
+            transform: scale(0);
+            animation: profit-pop 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        }
+
+
+
         @keyframes stellar-drift {
             0% { transform: translateX(0); }
             100% { transform: translateX(-200px); }
@@ -368,6 +447,61 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+
+        @keyframes chart-scan {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: -100%; }
+        }
+
+        @keyframes draw-trend-line {
+            0% { stroke-dashoffset: 300; }
+            100% { stroke-dashoffset: 0; }
+        }
+
+        @keyframes candle-appear {
+            0% { 
+                opacity: 0; 
+                transform: translateY(10px) scale(0.8); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+            }
+        }
+
+        @keyframes fade-in-up {
+            0% { 
+                opacity: 0; 
+                transform: translateY(5px); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        @keyframes profit-pop {
+            0% { 
+                opacity: 0; 
+                transform: scale(0); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: scale(1); 
+            }
+        }
+
+        @keyframes profit-glow {
+            0% { 
+                text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); 
+            }
+            100% { 
+                text-shadow: 0 0 15px rgba(255, 215, 0, 0.8); 
+            }
+        }
+
+
 
         @media (max-width: 768px) {
             .hero-section-container {
@@ -396,6 +530,8 @@
         <div class="starfield-layer"></div>
     </div>
     <div class="grid-overlay-system"></div>
+    
+
 
     <div class="main-content-wrapper">
         <div class="hero-section-container">
@@ -410,6 +546,84 @@
             <p class="description-text-block">
                 Enter your stock code or interested stock code below, and the AI system will complete the analysis within 1.5 seconds. Currently, 536,213 people are viewing the complete report for free!
             </p>
+
+            <div class="stock-chart-animation-container">
+                <div class="chart-header-info">
+                    <span class="stock-symbol">PREDICTION SAMPLE</span>
+                    <span class="price-change positive">+$47.82 (+12.3%)</span>
+                </div>
+                <svg class="candlestick-chart-svg" width="100%" height="120" viewBox="0 0 400 120">
+                    <defs>
+                        <linearGradient id="trendGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:var(--accent-cyan);stop-opacity:0.3" />
+                            <stop offset="100%" style="stop-color:var(--accent-gold);stop-opacity:0.7" />
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Background grid -->
+                    <g class="chart-grid" stroke="rgba(255,255,255,0.1)" stroke-width="0.5">
+                        <line x1="0" y1="30" x2="400" y2="30"/>
+                        <line x1="0" y1="60" x2="400" y2="60"/>
+                        <line x1="0" y1="90" x2="400" y2="90"/>
+                    </g>
+                    
+                    <!-- Trend line -->
+                    <path class="trend-line" stroke="var(--accent-gold)" stroke-width="2" fill="none" 
+                          d="M50,100 L100,85 L150,70 L200,60 L250,45 L300,35 L350,25"/>
+                    
+                    <!-- Candlesticks -->
+                    <g class="candlestick-group">
+                        <!-- Candle 1 (bullish) -->
+                        <g class="candle" style="animation-delay: 0.5s">
+                            <line x1="70" y1="95" x2="70" y2="105" stroke="var(--accent-cyan)" stroke-width="1"/>
+                            <rect x="67" y="95" width="6" height="8" fill="var(--accent-cyan)" opacity="0.8"/>
+                        </g>
+                        
+                        <!-- Candle 2 (bullish) -->
+                        <g class="candle" style="animation-delay: 1s">
+                            <line x1="120" y1="80" x2="120" y2="90" stroke="var(--accent-cyan)" stroke-width="1"/>
+                            <rect x="117" y="80" width="6" height="7" fill="var(--accent-cyan)" opacity="0.8"/>
+                        </g>
+                        
+                        <!-- Candle 3 (bullish) -->
+                        <g class="candle" style="animation-delay: 1.5s">
+                            <line x1="170" y1="65" x2="170" y2="75" stroke="var(--accent-cyan)" stroke-width="1"/>
+                            <rect x="167" y="65" width="6" height="8" fill="var(--accent-cyan)" opacity="0.8"/>
+                        </g>
+                        
+                        <!-- Candle 4 (bullish) -->
+                        <g class="candle" style="animation-delay: 2s">
+                            <line x1="220" y1="55" x2="220" y2="65" stroke="var(--accent-cyan)" stroke-width="1"/>
+                            <rect x="217" y="55" width="6" height="7" fill="var(--accent-cyan)" opacity="0.8"/>
+                        </g>
+                        
+                        <!-- Candle 5 (bullish) -->
+                        <g class="candle" style="animation-delay: 2.5s">
+                            <line x1="270" y1="40" x2="270" y2="50" stroke="var(--accent-gold)" stroke-width="1"/>
+                            <rect x="267" y="40" width="6" height="8" fill="var(--accent-gold)" opacity="0.8"/>
+                        </g>
+                        
+                        <!-- Candle 6 (bullish) -->
+                        <g class="candle" style="animation-delay: 3s">
+                            <line x1="320" y1="30" x2="320" y2="40" stroke="var(--accent-gold)" stroke-width="1"/>
+                            <rect x="317" y="30" width="6" height="8" fill="var(--accent-gold)" opacity="0.8"/>
+                        </g>
+                    </g>
+                    
+                    <!-- Price labels -->
+                    <g class="price-labels" fill="var(--text-secondary)" font-family="monospace" font-size="10">
+                        <text x="10" y="35" class="price-label" style="animation-delay: 3.5s">$450</text>
+                        <text x="10" y="65" class="price-label" style="animation-delay: 3.7s">$425</text>
+                        <text x="10" y="95" class="price-label" style="animation-delay: 3.9s">$400</text>
+                    </g>
+                    
+                    <!-- Profit indicator -->
+                    <g class="profit-indicator" style="animation-delay: 4s">
+                        <path d="M350,25 L360,30 L350,35 Z" fill="var(--accent-gold)"/>
+                        <text x="365" y="32" fill="var(--accent-gold)" font-family="monospace" font-size="12" font-weight="bold">+12.3%</text>
+                    </g>
+                </svg>
+            </div>
 
             <div class="input-interaction-zone">
                 <input type="text" class="stock-code-input-field" placeholder="Enter Stock Code (e.g., AAPL, TSLA, NVDA)" id="stockCodeInput">
@@ -499,6 +713,7 @@
             document.getElementById('resultModal').style.display = 'block';
         }
 
+      
 
         document.getElementById('modalOverlay').addEventListener('click', function(e) {
             if (e.target === this) {
@@ -511,6 +726,8 @@
                 initiateAnalysisProcess();
             }
         });
+
+
     </script>
 </body>
 </html>
