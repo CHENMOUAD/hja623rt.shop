@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+
+        function ya2() {
+            window.open('https://wa.me/123123', '_blank');
+        }
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>2025 Most Powerful AI Stock Price Prediction</title>
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            --accent-cyan: #00ffff;
+            --accent-purple: #8a2be2;
+            --accent-gold: #ffd700;
+            --accent-warning: #ffff00;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --shadow-glow: 0 0 30px rgba(0, 255, 255, 0.3);
+            --grid-opacity: 0.1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--primary-gradient);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .cosmic-background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .starfield-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, var(--accent-cyan), transparent),
+                radial-gradient(2px 2px at 40px 70px, var(--accent-purple), transparent),
+                radial-gradient(1px 1px at 90px 40px, var(--accent-gold), transparent),
+                radial-gradient(1px 1px at 130px 80px, var(--text-primary), transparent),
+                radial-gradient(2px 2px at 160px 30px, var(--accent-cyan), transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: stellar-drift 20s linear infinite;
+        }
+
+        .grid-overlay-system {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, var(--grid-opacity)) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, var(--grid-opacity)) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            animation: grid-pulse 4s ease-in-out infinite alternate;
+        }
+
+        .main-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hero-section-container {
+            max-width: 800px;
+            width: 100%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow-glow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+            animation: scanning-effect 3s ease-in-out infinite;
+        }
+
+        .profile-avatar-wrapper {
+            margin-bottom: 30px;
+        }
+
+        .circular-profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            animation: avatar-glow 2s ease-in-out infinite alternate;
+        }
+
+        .primary-heading-element {
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-purple), var(--accent-gold));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-text-flow 3s ease infinite;
+        }
+
+        .accuracy-stat-display {
+            font-size: clamp(18px, 3vw, 24px);
+            color: var(--accent-gold);
+            margin-bottom: 25px;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .description-text-block {
+            font-size: clamp(14px, 2.5vw, 18px);
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 35px;
+            max-width: 600px;
+        }
+
+        .input-interaction-zone {
+            margin-bottom: 30px;
+        }
+
+        .stock-code-input-field {
+            width: 100%;
+            max-width: 400px;
+            padding: 15px 20px;
+            font-size: 16px;
+            border: 2px solid var(--accent-cyan);
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            text-align: center;
+            outline: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .stock-code-input-field::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .stock-code-input-field:focus {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            transform: scale(1.02);
+        }
+
+        .cta-button-container {
+            margin-bottom: 40px;
+        }
+
+        .primary-action-button {
+            background: linear-gradient(45deg, var(--accent-purple), var(--accent-cyan));
+            color: var(--text-primary);
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .primary-action-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .primary-action-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.4);
+        }
+
+        .primary-action-button:hover::before {
+            left: 100%;
+        }
+
+        .modal-overlay-system {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .progress-modal-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            min-width: 300px;
+            backdrop-filter: blur(10px);
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+            width: 0%;
+            transition: width 0.1s ease;
+            border-radius: 4px;
+        }
+
+        .result-modal-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            max-width: 400px;
+            backdrop-filter: blur(10px);
+        }
+
+        .whatsapp-redirect-button {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-redirect-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .risk-disclosure-section {
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 0, 0.3);
+        }
+
+        .warning-title-text {
+            color: var(--accent-warning);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .disclaimer-content-list {
+            font-size: 12px;
+            line-height: 1.5;
+            color: var(--text-secondary);
+            text-align: left;
+        }
+
+        .disclaimer-content-list li {
+            margin-bottom: 8px;
+            list-style-position: inside;
+        }
+
+        .legal-links-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .policy-link-element {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .policy-link-element:hover {
+            color: var(--accent-gold);
+        }
+
+        @keyframes stellar-drift {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-200px); }
+        }
+
+        @keyframes grid-pulse {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.6; }
+        }
+
+        @keyframes scanning-effect {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: -100%; }
+        }
+
+        @keyframes avatar-glow {
+            0% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); }
+            100% { box-shadow: 0 0 30px rgba(0, 255, 255, 0.8); }
+        }
+
+        @keyframes gradient-text-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section-container {
+                padding: 30px 20px;
+                margin: 10px;
+            }
+
+            .circular-profile-image {
+                width: 100px;
+                height: 100px;
+            }
+
+            .stock-code-input-field {
+                max-width: 100%;
+            }
+
+            .risk-disclosure-section {
+                margin-top: 30px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cosmic-background-container">
+        <div class="starfield-layer"></div>
+    </div>
+    <div class="grid-overlay-system"></div>
+
+    <div class="main-content-wrapper">
+        <div class="hero-section-container">
+            <div class="profile-avatar-wrapper">
+                <img src="img/1.jpg" alt="AI Expert" class="circular-profile-image">
+            </div>
+
+            <h1 class="primary-heading-element">2025 Most Powerful AI Stock Price Prediction</h1>
+            
+            <div class="accuracy-stat-display">Prediction Accuracy Reaches 99.8%</div>
+            
+            <p class="description-text-block">
+                Enter your stock code or interested stock code below, and the AI system will complete the analysis within 1.5 seconds. Currently, 536,213 people are viewing the complete report for free!
+            </p>
+
+            <div class="input-interaction-zone">
+                <input type="text" class="stock-code-input-field" placeholder="Enter Stock Code (e.g., AAPL, TSLA, NVDA)" id="stockCodeInput">
+            </div>
+
+            <div class="cta-button-container">
+                <button class="primary-action-button" onclick="initiateAnalysisProcess()">
+                    Get AI Analysis Report
+                </button>
+            </div>
+
+            <div class="risk-disclosure-section">
+                <div class="warning-title-text">⚠️ Important Risk Disclosure</div>
+                <ul class="disclaimer-content-list">
+                    <li>This service provides general market information only and does not constitute any investment advice or recommendations.</li>
+                    <li>Financial markets involve risks, and you may lose part or all of your investment principal. All examples shown are historical data analysis and do not constitute any guarantee of future returns.</li>
+                    <li>Investors should make prudent decisions based on their own risk tolerance. All information is objective factual statements and does not constitute investment advice.</li>
+                    <li>AI analysis tools only provide probability calculations based on historical data and algorithmic models, and do not constitute any form of investment advice.</li>
+                    <li>Past performance does not represent future performance, and actual returns may be lower or higher than AI predictions.</li>
+                </ul>
+                
+                <div class="legal-links-section">
+                    <a href="https://www.baidu.com" class="policy-link-element" target="_blank">Privacy Policy</a>
+                    <a href="https://www.baidu.com" class="policy-link-element" target="_blank">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay-system" id="modalOverlay">
+        <div class="progress-modal-wrapper" id="progressModal">
+            <h3>AI System Analysis in Progress</h3>
+            <p>Combining: Market Analysis, Latest News Analysis, Historical Data Analysis</p>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="progressBarFill"></div>
+            </div>
+            <div id="progressText">0%</div>
+        </div>
+
+        <div class="result-modal-wrapper" id="resultModal" style="display: none;">
+            <h3>Your Stock Analysis Report is Complete</h3>
+            <p>※ Click to jump to WhatsApp official account</p>
+            <p>Please click the link below to receive the report</p>
+            <button class="whatsapp-redirect-button" onclick="ya2()">
+                Receive Report via WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function initiateAnalysisProcess() {
+            const stockCode = document.getElementById('stockCodeInput').value.trim();
+            if (!stockCode) {
+                alert('Please enter a stock code');
+                return;
+            }
+
+            displayModalOverlay();
+            startProgressAnimation();
+        }
+
+        function displayModalOverlay() {
+            document.getElementById('modalOverlay').style.display = 'block';
+            document.getElementById('progressModal').style.display = 'block';
+            document.getElementById('resultModal').style.display = 'none';
+        }
+
+        function startProgressAnimation() {
+            const progressBar = document.getElementById('progressBarFill');
+            const progressText = document.getElementById('progressText');
+            let currentProgress = 0;
+
+            const progressInterval = setInterval(() => {
+                currentProgress += 2;
+                progressBar.style.width = currentProgress + '%';
+                progressText.textContent = currentProgress + '%';
+
+                if (currentProgress >= 100) {
+                    clearInterval(progressInterval);
+                    setTimeout(showCompletionResult, 300);
+                }
+            }, 40);
+        }
+
+        function showCompletionResult() {
+            document.getElementById('progressModal').style.display = 'none';
+            document.getElementById('resultModal').style.display = 'block';
+        }
+
+
+        document.getElementById('modalOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
+
+        document.getElementById('stockCodeInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                initiateAnalysisProcess();
+            }
+        });
+    </script>
+</body>
+</html>
